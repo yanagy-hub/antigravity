@@ -10,7 +10,13 @@ Thumbs.db
 # Environment variables
 .env
 .env.local
+.env*.local
+
 
 # Temporary or local workspace files
 Antigravity_Doc/93_Temporary/*
 !Antigravity_Doc/93_Temporary/.gitkeep
+
+# Node dependencies
+node_modules/
+**/node_modules/
