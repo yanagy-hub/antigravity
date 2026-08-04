@@ -38,3 +38,4 @@
 ## 変更履歴
 - **2026-07-31**: ループエンジニアリング定義ファイル群の構築に伴い、初期構成（`00_Config`, `10_Loop_Definitions`, `90_System`）を定義・作成。
 - **2026-08-04**: ディレクトリ構造のルール定義改定に伴い、`20_Workspace`（開発）、`30_Document`（文章管理）、`40_Management`（タスク管理）、`50_Library`（参考資料）、`60_Assets`（素材）、`70_Templates`（テンプレート）を追加・整理して最新化。ルート直下の `Loop_Engineering*.md` を `10_Loop_Definitions/` へ集約。
+- **2026-08-04**: 各種開発内容を `20_Workspace/<アプリ名>/` 配下に作成する運用規則および各ディレクトリの作成・管理ルールを `01_Directory_Structure.md` および `Vault_Structure.md` に明記・最新化。
