@@ -20,3 +20,5 @@ Antigravity_Doc/93_Temporary/*
 # Node dependencies
 node_modules/
 **/node_modules/
+.vercel
+.env*
