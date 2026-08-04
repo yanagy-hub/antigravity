@@ -20,7 +20,8 @@
 | | ├── `Loop_Engineering_Implementation_Plan.md` | ループエンジニアリング定義ファイル群作成の実装計画書 |
 | | └── `Loop_Engineering_Walkthrough.md` | ループエンジニアリング定義ファイル群作成の完了報告書 |
 | **`20`** | `20_Workspace/` | 開発レイヤー（ソースコード、Webアプリケーション、実験的コード等のワークスペース） |
-| | └── `Dev/` | メイン開発プロジェクト領域（アプリケーション実装） |
+| | ├── `Dev/` | メイン開発プロジェクト領域（アプリケーション実装） |
+| | └── `journal-app/` | 簡易ジャーナルWebアプリケーション（Modern Journal App） |
 | **`30`** | `30_Document/` | 文章管理レイヤー（プロジェクトのルール、仕様書、ナレッジ、ノート管理） |
 | | ├── `01_Rules/` | 運用ルール・コーディング規約（`01_Directory_Structure.md` 等） |
 | | └── `93_Temporary/` | 一時作業用ドキュメント保管場所 |
@@ -41,3 +42,4 @@
 - **2026-08-04**: ディレクトリ構造のルール定義改定に伴い、`20_Workspace`（開発）、`30_Document`（文章管理）、`40_Management`（タスク管理）、`50_Library`（参考資料）、`60_Assets`（素材）、`70_Templates`（テンプレート）を追加・整理して最新化。ルート直下の `Loop_Engineering*.md` を `10_Loop_Definitions/` へ集約。
 - **2026-08-04**: 各種開発内容を `20_Workspace/<アプリ名>/` 配下に作成する運用規則および各ディレクトリの作成・管理ルールを `01_Directory_Structure.md` および `Vault_Structure.md` に明記・最新化。
 - **2026-08-04**: Git一括同期スキル（`git-sync`）およびヘルパースクリプト（`git_sync.py`）の追加、Loop開発時のルール参照義務を明記し最新化。
+- **2026-08-04**: 簡易ジャーナルWebアプリ（`20_Workspace/journal-app/`）を新規構築し、構成定義に追記・最新化。

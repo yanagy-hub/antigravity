@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Journal - 簡易ジャーナルアプリ</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i data-lucide="book-open" class="brand-icon"></i>
+                <h2>Journal</h2>
+            </div>
+            
+            <button id="btn-new-entry" class="btn btn-primary btn-block">
+                <i data-lucide="plus"></i>
+                <span>新しい記事を書く</span>
+            </button>
+
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <h3>フィルター</h3>
+                    <ul class="filter-list">
+                        <li class="filter-item active" data-filter="all">
+                            <i data-lucide="grid"></i> すべてのエントリー
+                            <span id="count-all" class="badge">0</span>
+                        </li>
+                        <li class="filter-item" data-filter="favorites">
+                            <i data-lucide="star"></i> お気に入り
+                            <span id="count-fav" class="badge">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>気分 (Mood)</h3>
+                    <div id="mood-filters" class="mood-filter-grid">
+                        <button class="mood-chip" data-mood="happy" title="最高">😊</button>
+                        <button class="mood-chip" data-mood="good" title="良い">😃</button>
+                        <button class="mood-chip" data-mood="neutral" title="普通">😐</button>
+                        <button class="mood-chip" data-mood="sad" title="憂鬱">😔</button>
+                        <button class="mood-chip" data-mood="angry" title="イライラ">😤</button>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <h3>タグ</h3>
+                    <div id="tags-cloud" class="tags-cloud">
+                        <!-- JSで動的生成 -->
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="btn-export" class="btn btn-secondary btn-sm" title="データをJSON出力">
+                    <i data-lucide="download"></i> エクスポート
+                </button>
+                <button id="btn-import-trigger" class="btn btn-secondary btn-sm" title="JSONデータを復元">
+                    <i data-lucide="upload"></i> インポート
+                </button>
+                <input type="file" id="input-import" accept=".json" style="display:none;">
+            </div>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- ヘッダー / 検索バー -->
+            <header class="top-header">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="search-input" placeholder="タイトルや本文、タグで検索...">
+                    <button id="search-clear" class="btn-icon hidden"><i data-lucide="x"></i></button>
+                </div>
+                <div class="stats-summary">
+                    <span id="total-stats">0 件のエントリー</span>
+                </div>
+            </header>
+
+            <!-- フィルター状態通知バー -->
+            <div id="active-filter-bar" class="active-filter-bar hidden">
+                <span id="active-filter-text">フィルター適用中</span>
+                <button id="btn-clear-filter" class="btn-link">フィルター解除</button>
+            </div>
+
+            <!-- エントリーカードグリッド -->
+            <section class="content-area">
+                <div id="entries-grid" class="entries-grid">
+                    <!-- JSで動的に表示 -->
+                </div>
+                <!-- 空状態プレースホルダー -->
+                <div id="empty-state" class="empty-state hidden">
+                    <i data-lucide="file-text" class="empty-icon"></i>
+                    <h3>エントリーが見つかりません</h3>
+                    <p>新しいジャーナルを作成するか、検索キーワード・フィルターを変更してください。</p>
+                    <button id="btn-empty-new" class="btn btn-primary">
+                        <i data-lucide="plus"></i> 最初の記事を書く
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- モーダル：エントリー作成・編集 -->
+    <div id="entry-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <header class="modal-header">
+                <h3 id="modal-title">新しいジャーナル</h3>
+                <button id="modal-close" class="btn-icon"><i data-lucide="x"></i></button>
+            </header>
+            <form id="entry-form" class="modal-body">
+                <input type="hidden" id="entry-id">
+                
+                <div class="form-group">
+                    <input type="text" id="entry-title-input" placeholder="タイトルを入力..." required class="form-control title-input">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>日付</label>
+                        <input type="date" id="entry-date-input" required class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>今日の気分</label>
+                        <div class="mood-selector">
+                            <label><input type="radio" name="mood" value="happy" checked><span>😊</span></label>
+                            <label><input type="radio" name="mood" value="good"><span>😃</span></label>
+                            <label><input type="radio" name="mood" value="neutral"><span>😐</span></label>
+                            <label><input type="radio" name="mood" value="sad"><span>😔</span></label>
+                            <label><input type="radio" name="mood" value="angry"><span>😤</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>本文</label>
+                    <textarea id="entry-content-input" rows="8" placeholder="今日のできごとや思考を記録しよう..." required class="form-control content-input"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>タグ (カンマ区切り)</label>
+                    <input type="text" id="entry-tags-input" placeholder="例: アイデア, 日記, 思考" class="form-control">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="entry-fav-input">
+                        <span>お気に入りに追加</span>
+                    </label>
+                </div>
+
+                <footer class="modal-footer">
+                    <button type="button" id="btn-cancel" class="btn btn-secondary">キャンセル</button>
+                    <button type="submit" id="btn-save" class="btn btn-primary">保存する</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
