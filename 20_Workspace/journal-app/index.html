@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Journal - 簡易ジャーナルアプリ</title>
+    <title>Modern Journal - 高機能ジャーナルアプリ</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Marked (Markdown Parser) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Chart.js (Analytics & Trends) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,6 +28,11 @@
             <button id="btn-new-entry" class="btn btn-primary btn-block">
                 <i data-lucide="plus"></i>
                 <span>新しい記事を書く</span>
+            </button>
+
+            <button id="btn-dashboard" class="btn btn-secondary btn-block mt-2">
+                <i data-lucide="activity"></i>
+                <span>統計ダッシュボード</span>
             </button>
 
             <nav class="nav-menu">
@@ -61,12 +70,17 @@
             </nav>
 
             <div class="sidebar-footer">
-                <button id="btn-export" class="btn btn-secondary btn-sm" title="データをJSON出力">
-                    <i data-lucide="download"></i> エクスポート
-                </button>
-                <button id="btn-import-trigger" class="btn btn-secondary btn-sm" title="JSONデータを復元">
-                    <i data-lucide="upload"></i> インポート
-                </button>
+                <div class="footer-actions-row">
+                    <button id="btn-export" class="btn btn-secondary btn-sm" title="データをJSON出力">
+                        <i data-lucide="download"></i> JSON
+                    </button>
+                    <button id="btn-export-md-all" class="btn btn-secondary btn-sm" title="Obsidian形式(Markdown)で一括出力">
+                        <i data-lucide="file-text"></i> Obsidian一括
+                    </button>
+                    <button id="btn-import-trigger" class="btn btn-secondary btn-sm" title="JSONデータを復元">
+                        <i data-lucide="upload"></i> 復元
+                    </button>
+                </div>
                 <input type="file" id="input-import" accept=".json" style="display:none;">
             </div>
         </aside>
@@ -111,7 +125,7 @@
 
     <!-- モーダル：エントリー作成・編集 -->
     <div id="entry-modal" class="modal-overlay hidden">
-        <div class="modal-card">
+        <div class="modal-card modal-lg">
             <header class="modal-header">
                 <h3 id="modal-title">新しいジャーナル</h3>
                 <button id="modal-close" class="btn-icon"><i data-lucide="x"></i></button>
@@ -141,14 +155,25 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>本文</label>
-                    <textarea id="entry-content-input" rows="8" placeholder="今日のできごとや思考を記録しよう..." required class="form-control content-input"></textarea>
+                <!-- Markdown エディタ / プレビュー タブ -->
+                <div class="editor-tabs-container">
+                    <div class="editor-tabs-nav">
+                        <button type="button" id="tab-edit" class="tab-btn active">✏️ 編集 (Markdown)</button>
+                        <button type="button" id="tab-preview" class="tab-btn">👁️ プレビュー</button>
+                    </div>
+
+                    <div id="tab-pane-edit" class="tab-pane">
+                        <textarea id="entry-content-input" rows="10" placeholder="Markdown記法で自由に記録できます（見出し #、リスト -、コード ``` 等）..." required class="form-control content-input"></textarea>
+                    </div>
+
+                    <div id="tab-pane-preview" class="tab-pane hidden">
+                        <div id="markdown-preview-area" class="markdown-preview-box"></div>
+                    </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label>タグ (カンマ区切り)</label>
-                    <input type="text" id="entry-tags-input" placeholder="例: アイデア, 日記, 思考" class="form-control">
+                    <input type="text" id="entry-tags-input" placeholder="例: アイデア, 日記, 開発" class="form-control">
                 </div>
 
                 <div class="form-group checkbox-group">
@@ -166,6 +191,91 @@
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- モーダル：詳細リーダー (Reader Modal) -->
+    <div id="reader-modal" class="modal-overlay hidden">
+        <div class="modal-card modal-lg">
+            <header class="modal-header">
+                <div class="reader-header-meta">
+                    <span id="reader-mood" class="reader-mood-badge"></span>
+                    <span id="reader-date" class="reader-date-text"></span>
+                </div>
+                <div class="reader-header-actions">
+                    <button id="btn-reader-export-md" class="btn btn-secondary btn-sm" title="Obsidian形式(Markdown)で保存">
+                        <i data-lucide="file-down"></i> .md 保存
+                    </button>
+                    <button id="btn-reader-edit" class="btn btn-secondary btn-sm" title="編集">
+                        <i data-lucide="edit-3"></i> 編集
+                    </button>
+                    <button id="reader-close" class="btn-icon"><i data-lucide="x"></i></button>
+                </div>
+            </header>
+            <div class="reader-content-body">
+                <h2 id="reader-title" class="reader-title-text"></h2>
+                <div id="reader-tags" class="reader-tags-bar"></div>
+                <hr class="reader-divider">
+                <div id="reader-body" class="markdown-rendered-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- モーダル：統計ダッシュボード (Dashboard Modal) -->
+    <div id="dashboard-modal" class="modal-overlay hidden">
+        <div class="modal-card modal-xl">
+            <header class="modal-header">
+                <div class="dashboard-header-title">
+                    <i data-lucide="bar-chart-2" class="dashboard-title-icon"></i>
+                    <h3>ジャーナル統計 ＆ 気分推移ダッシュボード</h3>
+                </div>
+                <button id="dashboard-close" class="btn-icon"><i data-lucide="x"></i></button>
+            </header>
+            <div class="dashboard-body">
+                <!-- サマリーカード群 -->
+                <div class="dashboard-stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">総エントリー数</span>
+                        <h4 id="stat-total-entries" class="stat-value">0 件</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">お気に入り記事</span>
+                        <h4 id="stat-favorite-entries" class="stat-value">0 件</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">平均気分スコア</span>
+                        <h4 id="stat-avg-mood" class="stat-value">0.0 / 5.0</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">最多利用タグ</span>
+                        <h4 id="stat-top-tag" class="stat-value">なし</h4>
+                    </div>
+                </div>
+
+                <!-- チャートコンテナ -->
+                <div id="dashboard-charts-container" class="dashboard-charts-grid">
+                    <div class="chart-card">
+                        <h4>📈 気分の推移 (直近のエントリー)</h4>
+                        <div class="chart-wrapper">
+                            <canvas id="chart-mood-trend"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h4>🍩 気分の構成割合</h4>
+                        <div class="chart-wrapper">
+                            <canvas id="chart-mood-dist"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 空データ時のエンプティステート -->
+                <div id="dashboard-empty-state" class="empty-state hidden">
+                    <i data-lucide="inbox" class="empty-icon"></i>
+                    <h4>データがまだありません</h4>
+                    <p>ジャーナルを記録すると、ここに気分の推移や統計グラフが表示されます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ES Module Main Entry Point -->
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

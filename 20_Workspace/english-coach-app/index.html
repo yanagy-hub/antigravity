@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Coach App - パーソナル英語学習＆AIチューター</title>
+  
+  <!-- CDN Scripts & Styles -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== Header ==================== -->
+  <header class="app-header">
+    <div class="header-inner">
+      <!-- Logo & Brand -->
+      <div class="brand-group">
+        <div class="logo-box">
+          <i data-lucide="graduation-cap"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">English Coach Nova</h1>
+        </div>
+      </div>
+
+      <!-- Center Controls: Mode & Timer -->
+      <div class="header-center-controls">
+        <!-- 3大モード切り替え -->
+        <div class="mode-selector-wrapper">
+          <i data-lucide="layers" class="text-emerald"></i>
+          <select id="modeSelect" class="styled-select">
+            <option value="daily">☕️ 日常英会話 (Daily)</option>
+            <option value="business">💼 ビジネス英語 (Business)</option>
+            <option value="toeic">🎯 TOEIC対策 (L&R)</option>
+          </select>
+          <span id="currentModeBadge" class="badge badge-daily">日常会話</span>
+        </div>
+
+        <!-- 学習タイマー ＆ 学習記録ボタン -->
+        <div class="timer-widget">
+          <span class="timer-digits" id="studyTimerDisplay">00:00</span>
+          <button id="timerToggleBtn" class="btn btn-secondary btn-sm" title="タイマー一時停止/再開">
+            <i data-lucide="pause"></i> <span>一時停止</span>
+          </button>
+          <button id="logStudyBtn" class="btn btn-primary btn-sm btn-log-study" title="今日の学習を確定・Obsidianに記録">
+            <i data-lucide="check-circle-2"></i> <span>学習を記録する</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Actions: Streak & Settings -->
+      <div class="header-right-actions">
+        <div class="header-stat-pill" title="連続学習日数">
+          <i data-lucide="flame" class="text-amber"></i>
+          <span id="headerStreakCount">1日連続</span>
+        </div>
+        <div class="header-stat-pill" title="今日の学習時間">
+          <i data-lucide="clock" class="text-blue"></i>
+          <span id="headerTodayMinutes">0分</span>
+        </div>
+
+        <!-- 文法ガイドクイックボタン -->
+        <button id="grammarGuideBtn" class="btn btn-secondary btn-sm" title="基礎文法ガイド">
+          <i data-lucide="book-open"></i> 文法ガイド
+        </button>
+
+        <!-- API設定ボタン -->
+        <button id="settingsBtn" class="btn-icon" title="APIキー設定">
+          <i data-lucide="settings"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== Navigation Tabs ==================== -->
+  <nav class="navigation-bar">
+    <div class="nav-tabs">
+      <button class="nav-tab-btn active" data-tab="dashboard">
+        <i data-lucide="layout-dashboard"></i> ダッシュボード・進捗
+      </button>
+      <button class="nav-tab-btn" data-tab="chat">
+        <i data-lucide="messages-square"></i> AI講師ロールプレイ (対話・音声)
+      </button>
+      <button class="nav-tab-btn" data-tab="review">
+        <i data-lucide="check-check"></i> 英文添削＆文法解説
+      </button>
+      <button class="nav-tab-btn" data-tab="quiz">
+        <i data-lucide="help-circle"></i> デイリークイズ
+      </button>
+      <button class="nav-tab-btn" data-tab="phrasebook">
+        <i data-lucide="bookmark"></i> 保存フレーズ・Vault連携
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== Main Content Area ==================== -->
+  <main class="main-container">
+    <!-- 1. Dashboard Tab Panel -->
+    <div id="tab-dashboard" class="tab-content-panel"></div>
+
+    <!-- 2. Chat & Roleplay Tab Panel -->
+    <div id="tab-chat" class="tab-content-panel hidden"></div>
+
+    <!-- 3. Review Tab Panel -->
+    <div id="tab-review" class="tab-content-panel hidden"></div>
+
+    <!-- 4. Quiz Tab Panel -->
+    <div id="tab-quiz" class="tab-content-panel hidden"></div>
+
+    <!-- 5. Phrasebook Tab Panel -->
+    <div id="tab-phrasebook" class="tab-content-panel hidden"></div>
+  </main>
+
+  <!-- ==================== Settings Modal ==================== -->
+  <div id="settingsModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i data-lucide="key"></i> Gemini API 設定</h3>
+        <button id="closeSettingsBtn" class="action-icon-btn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="apiKeyInput">Google Gemini API キー</label>
+          <input type="password" id="apiKeyInput" class="form-input" placeholder="AIzaSy...">
+          <p class="help-text">
+            APIキーはブラウザ内（LocalStorage）にのみ安全に保存されます。<br/>
+            取得方法: <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio (無料枠あり)</a>
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="modelSelect">使用モデル</label>
+          <select id="modelSelect" class="form-input">
+            <option value="gemini-1.5-flash">Gemini 1.5 Flash (高速・推奨)</option>
+            <option value="gemini-2.0-flash">Gemini 2.0 Flash (最新・超高速)</option>
+            <option value="gemini-1.5-pro">Gemini 1.5 Pro (高精度・深い添削)</option>
+          </select>
+        </div>
+
+        <button id="testApiBtn" class="btn btn-secondary btn-sm">
+          接続テスト
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button id="saveSettingsBtn" class="btn btn-primary">
+          <i data-lucide="save"></i> 設定を保存
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Grammar Guide Modal ==================== -->
+  <div id="grammarModal" class="modal-overlay hidden">
+    <div class="modal-card" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3><i data-lucide="book-open"></i> 基礎からの文法ガイド</h3>
+        <button id="closeGrammarBtn" class="action-icon-btn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="grammarGuideModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ==================== Celebration / Learning Log Modal ==================== -->
+  <div id="celebrationModal" class="modal-overlay hidden">
+    <div class="modal-card" style="max-width: 520px; text-align: center;">
+      <div class="modal-body" style="padding: 2.5rem 2rem;">
+        <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">🎉</div>
+        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem;">本日の学習を記録しました！</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">お疲れ様でした！着実に英語力がステップアップしています。</p>
+        
+        <div style="background: var(--bg-input); border-radius: var(--radius-md); padding: 1.25rem; border: 1px solid var(--border-subtle); margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left;">
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">本日の学習時間</span>
+            <div id="modalTodayMinutes" style="font-size: 1.3rem; font-weight: 700; color: #60a5fa;">0分</div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">連続ストリーク</span>
+            <div id="modalStreakDays" style="font-size: 1.3rem; font-weight: 700; color: #f59e0b;">🔥 1日連続</div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">累計学習時間</span>
+            <div id="modalTotalMinutes" style="font-size: 1.3rem; font-weight: 700; color: #a78bfa;">0分</div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">保存フレーズ総数</span>
+            <div id="modalPhrasesCount" style="font-size: 1.3rem; font-weight: 700; color: #34d399;">0語</div>
+          </div>
+        </div>
+
+        <div id="modalSyncStatus" style="font-size: 0.85rem; padding: 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">
+          <i data-lucide="check-circle" style="vertical-align: middle; width: 16px; height: 16px;"></i>
+          <span id="modalSyncStatusText">Obsidian Vault (30_Document/English_Learning/) に直接記録を保存しました！</span>
+        </div>
+
+        <button id="closeCelebrationBtn" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.75rem;">
+          OK（学習を続ける）
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 6-Step Interactive Study Session Modal ==================== -->
+  <div id="studySessionModal" class="modal-overlay hidden">
+    <div class="modal-card study-session-modal-card">
+      <div class="modal-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+            <span class="badge badge-emerald" id="sessionModalPhaseBadge">Phase 1</span>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);" id="sessionModalModeBadge">日常英会話</span>
+          </div>
+          <h3 id="sessionModalTitle" style="font-size: 1.2rem; font-weight: 700; color: #fff;">ミッション学習</h3>
+        </div>
+        <button id="closeStudySessionBtn" class="action-icon-btn"><i data-lucide="x"></i></button>
+      </div>
+
+      <!-- 6-Step Progress Navigation -->
+      <div class="session-steps-nav">
+        <div class="step-indicator active" data-step="1">
+          <span class="step-badge-num">1</span>
+          <span class="step-name">初期学習</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-indicator" data-step="2">
+          <span class="step-badge-num">2</span>
+          <span class="step-name">短文</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-indicator" data-step="3">
+          <span class="step-badge-num">3</span>
+          <span class="step-name">長文</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-indicator" data-step="4">
+          <span class="step-badge-num">4</span>
+          <span class="step-name">スピーキング</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-indicator" data-step="5">
+          <span class="step-badge-num">5</span>
+          <span class="step-name">ロールプレイ</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-indicator" data-step="6">
+          <span class="step-badge-num">6</span>
+          <span class="step-name">振り返り</span>
+        </div>
+      </div>
+
+      <!-- Dynamic Step Content Area -->
+      <div class="session-step-content" id="studySessionContentArea">
+        <!-- JSで動的にレンダリング -->
+      </div>
+
+      <!-- Modal Footer Controls -->
+      <div class="session-modal-footer">
+        <button id="sessionPrevBtn" class="btn btn-secondary btn-sm" style="visibility: hidden;">
+          <i data-lucide="arrow-left"></i> 前へ
+        </button>
+        <div id="sessionStepHint" style="font-size: 0.85rem; color: var(--text-secondary);">
+          Step 1 / 6: 初期学習 (Core Concept)
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="sessionSkipBtn" class="btn btn-secondary btn-sm" style="opacity: 0.8;">
+            スキップ
+          </button>
+          <button id="sessionNextBtn" class="btn btn-primary btn-sm">
+            <span>次へ進む</span> <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Entry JavaScript (Self-contained Bundle for file:// & http://) ==================== -->
+  <script src="js/bundle.js"></script>
+</body>
+</html>

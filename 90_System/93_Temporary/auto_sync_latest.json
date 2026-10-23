@@ -1,0 +1,14 @@
+{
+  "stats": {
+    "totalMinutes": 40,
+    "todayMinutes": 40,
+    "streakDays": 2,
+    "modeDistribution": {
+      "daily": 20,
+      "business": 15,
+      "toeic": 5
+    }
+  },
+  "savedPhrases": [],
+  "reviewHistory": []
+}

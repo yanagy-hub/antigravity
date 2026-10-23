@@ -1,0 +1,1411 @@
+[
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 0,
+    "node": "START",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content"
+    },
+    "timestamp": "2026-08-25T22:18:53.079393"
+  },
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 1,
+    "node": "extract_seeds",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content",
+      "status": "seeds_extracted",
+      "log": [
+        "探索起点を設定: 00_Graph_Engineering"
+      ]
+    },
+    "timestamp": "2026-08-25T22:18:53.688328"
+  },
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 2,
+    "node": "traverse_topology",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content",
+      "status": "topology_traversed",
+      "log": [
+        "探索起点を設定: 00_Graph_Engineering",
+        "近傍サブグラフを走査: ノード数 5件, エッジ数 14件"
+      ],
+      "gathered_nodes": [
+        "02_グラフエンジニアリング_内部メカニズムと構造",
+        "01_グラフエンジニアリング_概念と基礎",
+        "00_Graph_Engineering",
+        "03_グラフエンジニアリング_実践設計と課題対策",
+        "04_グラフエンジニアリング_Antigravity実装例"
+      ],
+      "subgraph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "title": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "path": "30_Document/Graph_Engineering/02_グラフエンジニアリング_内部メカニズムと構造.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 内部メカニズムと構造",
+                "Graph Engineering 内部メカニズム"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "PageRank",
+                "自律エージェント",
+                "01_グラフエンジニアリング_概念と基礎",
+                "MOC",
+                "00_Graph_Engineering",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "トポロジー",
+                "Reducer"
+              ],
+              "char_count": 3174,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "01_グラフエンジニアリング_概念と基礎",
+              "title": "01_グラフエンジニアリング_概念と基礎",
+              "path": "30_Document/Graph_Engineering/01_グラフエンジニアリング_概念と基礎.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 概念と基礎",
+                "Graph Engineering 概念と基礎"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "StateGraph",
+                "PageRank",
+                "MOC",
+                "00_Graph_Engineering",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "ナレッジグラフ",
+                "有向非巡回グラフ",
+                "GraphRAG"
+              ],
+              "char_count": 3194,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "00_Graph_Engineering",
+              "title": "00_Graph_Engineering",
+              "path": "30_Document/Graph_Engineering/00_Graph_Engineering.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング",
+                "Graph_Engineering"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "アーキテクチャ",
+                "コア",
+                "01_グラフエンジニアリング_概念と基礎",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "トレードオフ",
+                "ナレッジグラフ",
+                "GraphRAG",
+                "ベクトル検索",
+                "クロスオーバー",
+                "StateGraph",
+                "LangGraph",
+                "トポロジー",
+                "有向非巡回グラフ",
+                "PageRank",
+                "00_Context_Engineering",
+                "00_Loop_Engineering",
+                "00_Semantic_Engineering",
+                "00_システム思考"
+              ],
+              "char_count": 1577,
+              "pagerank": 0.17991200942952681,
+              "pagerank_normalized": 100.0,
+              "in_degree": 4,
+              "out_degree": 4,
+              "total_degree": 8,
+              "is_center": true
+            }
+          },
+          {
+            "data": {
+              "id": "03_グラフエンジニアリング_実践設計と課題対策",
+              "title": "03_グラフエンジニアリング_実践設計と課題対策",
+              "path": "30_Document/Graph_Engineering/03_グラフエンジニアリング_実践設計と課題対策.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 実践設計と課題対策",
+                "Graph Engineering ベストプラクティス"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "MOC",
+                "00_Graph_Engineering",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "StateGraph",
+                "LangGraph",
+                "Human-in-the-loop",
+                "Reducer"
+              ],
+              "char_count": 2501,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "04_グラフエンジニアリング_Antigravity実装例",
+              "title": "04_グラフエンジニアリング_Antigravity実装例",
+              "path": "30_Document/Graph_Engineering/04_グラフエンジニアリング_Antigravity実装例.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング Antigravity実装例",
+                "Graph Engineering 実装コード"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "MOC",
+                "00_Graph_Engineering",
+                "Obsidian Canvas",
+                "Cytoscape.js",
+                "PageRank"
+              ],
+              "char_count": 3581,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "sub_e1",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e2",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e3",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e4",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e5",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e6",
+              "source": "00_Graph_Engineering",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e7",
+              "source": "00_Graph_Engineering",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e8",
+              "source": "00_Graph_Engineering",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e9",
+              "source": "00_Graph_Engineering",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e10",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e11",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e12",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e13",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e14",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          }
+        ]
+      }
+    },
+    "timestamp": "2026-08-25T22:18:54.641284"
+  },
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 3,
+    "node": "detect_cross_domain",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content",
+      "status": "bridges_detected",
+      "log": [
+        "探索起点を設定: 00_Graph_Engineering",
+        "近傍サブグラフを走査: ノード数 5件, エッジ数 14件",
+        "異分野架け橋ノードを検出: 0件"
+      ],
+      "gathered_nodes": [
+        "02_グラフエンジニアリング_内部メカニズムと構造",
+        "01_グラフエンジニアリング_概念と基礎",
+        "00_Graph_Engineering",
+        "03_グラフエンジニアリング_実践設計と課題対策",
+        "04_グラフエンジニアリング_Antigravity実装例"
+      ],
+      "subgraph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "title": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "path": "30_Document/Graph_Engineering/02_グラフエンジニアリング_内部メカニズムと構造.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 内部メカニズムと構造",
+                "Graph Engineering 内部メカニズム"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "PageRank",
+                "自律エージェント",
+                "01_グラフエンジニアリング_概念と基礎",
+                "MOC",
+                "00_Graph_Engineering",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "トポロジー",
+                "Reducer"
+              ],
+              "char_count": 3174,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "01_グラフエンジニアリング_概念と基礎",
+              "title": "01_グラフエンジニアリング_概念と基礎",
+              "path": "30_Document/Graph_Engineering/01_グラフエンジニアリング_概念と基礎.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 概念と基礎",
+                "Graph Engineering 概念と基礎"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "StateGraph",
+                "PageRank",
+                "MOC",
+                "00_Graph_Engineering",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "ナレッジグラフ",
+                "有向非巡回グラフ",
+                "GraphRAG"
+              ],
+              "char_count": 3194,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "00_Graph_Engineering",
+              "title": "00_Graph_Engineering",
+              "path": "30_Document/Graph_Engineering/00_Graph_Engineering.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング",
+                "Graph_Engineering"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "アーキテクチャ",
+                "コア",
+                "01_グラフエンジニアリング_概念と基礎",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "トレードオフ",
+                "ナレッジグラフ",
+                "GraphRAG",
+                "ベクトル検索",
+                "クロスオーバー",
+                "StateGraph",
+                "LangGraph",
+                "トポロジー",
+                "有向非巡回グラフ",
+                "PageRank",
+                "00_Context_Engineering",
+                "00_Loop_Engineering",
+                "00_Semantic_Engineering",
+                "00_システム思考"
+              ],
+              "char_count": 1577,
+              "pagerank": 0.17991200942952681,
+              "pagerank_normalized": 100.0,
+              "in_degree": 4,
+              "out_degree": 4,
+              "total_degree": 8,
+              "is_center": true
+            }
+          },
+          {
+            "data": {
+              "id": "03_グラフエンジニアリング_実践設計と課題対策",
+              "title": "03_グラフエンジニアリング_実践設計と課題対策",
+              "path": "30_Document/Graph_Engineering/03_グラフエンジニアリング_実践設計と課題対策.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 実践設計と課題対策",
+                "Graph Engineering ベストプラクティス"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "MOC",
+                "00_Graph_Engineering",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "StateGraph",
+                "LangGraph",
+                "Human-in-the-loop",
+                "Reducer"
+              ],
+              "char_count": 2501,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "04_グラフエンジニアリング_Antigravity実装例",
+              "title": "04_グラフエンジニアリング_Antigravity実装例",
+              "path": "30_Document/Graph_Engineering/04_グラフエンジニアリング_Antigravity実装例.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング Antigravity実装例",
+                "Graph Engineering 実装コード"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "MOC",
+                "00_Graph_Engineering",
+                "Obsidian Canvas",
+                "Cytoscape.js",
+                "PageRank"
+              ],
+              "char_count": 3581,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "sub_e1",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e2",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e3",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e4",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e5",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e6",
+              "source": "00_Graph_Engineering",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e7",
+              "source": "00_Graph_Engineering",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e8",
+              "source": "00_Graph_Engineering",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e9",
+              "source": "00_Graph_Engineering",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e10",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e11",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e12",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e13",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e14",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          }
+        ]
+      },
+      "bridges": [],
+      "bridge_count": 0
+    },
+    "timestamp": "2026-08-25T22:18:55.587455"
+  },
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 4,
+    "node": "synthesize_insights",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content",
+      "status": "synthesized",
+      "log": [
+        "探索起点を設定: 00_Graph_Engineering",
+        "近傍サブグラフを走査: ノード数 5件, エッジ数 14件",
+        "異分野架け橋ノードを検出: 0件",
+        "知識統合インサイトを生成完了"
+      ],
+      "gathered_nodes": [
+        "02_グラフエンジニアリング_内部メカニズムと構造",
+        "01_グラフエンジニアリング_概念と基礎",
+        "00_Graph_Engineering",
+        "03_グラフエンジニアリング_実践設計と課題対策",
+        "04_グラフエンジニアリング_Antigravity実装例"
+      ],
+      "subgraph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "title": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "path": "30_Document/Graph_Engineering/02_グラフエンジニアリング_内部メカニズムと構造.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 内部メカニズムと構造",
+                "Graph Engineering 内部メカニズム"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "PageRank",
+                "自律エージェント",
+                "01_グラフエンジニアリング_概念と基礎",
+                "MOC",
+                "00_Graph_Engineering",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "トポロジー",
+                "Reducer"
+              ],
+              "char_count": 3174,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "01_グラフエンジニアリング_概念と基礎",
+              "title": "01_グラフエンジニアリング_概念と基礎",
+              "path": "30_Document/Graph_Engineering/01_グラフエンジニアリング_概念と基礎.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 概念と基礎",
+                "Graph Engineering 概念と基礎"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "StateGraph",
+                "PageRank",
+                "MOC",
+                "00_Graph_Engineering",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "ナレッジグラフ",
+                "有向非巡回グラフ",
+                "GraphRAG"
+              ],
+              "char_count": 3194,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "00_Graph_Engineering",
+              "title": "00_Graph_Engineering",
+              "path": "30_Document/Graph_Engineering/00_Graph_Engineering.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング",
+                "Graph_Engineering"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "アーキテクチャ",
+                "コア",
+                "01_グラフエンジニアリング_概念と基礎",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "トレードオフ",
+                "ナレッジグラフ",
+                "GraphRAG",
+                "ベクトル検索",
+                "クロスオーバー",
+                "StateGraph",
+                "LangGraph",
+                "トポロジー",
+                "有向非巡回グラフ",
+                "PageRank",
+                "00_Context_Engineering",
+                "00_Loop_Engineering",
+                "00_Semantic_Engineering",
+                "00_システム思考"
+              ],
+              "char_count": 1577,
+              "pagerank": 0.17991200942952681,
+              "pagerank_normalized": 100.0,
+              "in_degree": 4,
+              "out_degree": 4,
+              "total_degree": 8,
+              "is_center": true
+            }
+          },
+          {
+            "data": {
+              "id": "03_グラフエンジニアリング_実践設計と課題対策",
+              "title": "03_グラフエンジニアリング_実践設計と課題対策",
+              "path": "30_Document/Graph_Engineering/03_グラフエンジニアリング_実践設計と課題対策.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 実践設計と課題対策",
+                "Graph Engineering ベストプラクティス"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "MOC",
+                "00_Graph_Engineering",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "StateGraph",
+                "LangGraph",
+                "Human-in-the-loop",
+                "Reducer"
+              ],
+              "char_count": 2501,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "04_グラフエンジニアリング_Antigravity実装例",
+              "title": "04_グラフエンジニアリング_Antigravity実装例",
+              "path": "30_Document/Graph_Engineering/04_グラフエンジニアリング_Antigravity実装例.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング Antigravity実装例",
+                "Graph Engineering 実装コード"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "MOC",
+                "00_Graph_Engineering",
+                "Obsidian Canvas",
+                "Cytoscape.js",
+                "PageRank"
+              ],
+              "char_count": 3581,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "sub_e1",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e2",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e3",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e4",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e5",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e6",
+              "source": "00_Graph_Engineering",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e7",
+              "source": "00_Graph_Engineering",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e8",
+              "source": "00_Graph_Engineering",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e9",
+              "source": "00_Graph_Engineering",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e10",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e11",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e12",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e13",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e14",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          }
+        ]
+      },
+      "bridges": [],
+      "bridge_count": 0,
+      "insights": "【探索サマリー】\n- 起点ノート: 00_Graph_Engineering\n- 走査範囲: 関連5ノート\n- 主要架け橋概念: \n\n【創発インサイト】\nこれらの概念が交差することで、ドメイン間の知識循環が加速されます。"
+    },
+    "timestamp": "2026-08-25T22:18:56.504313"
+  },
+  {
+    "thread_id": "stream_knowledge_emergence_1787663933",
+    "step": 5,
+    "node": "export_canvas",
+    "state": {
+      "seeds": [
+        "00_Graph_Engineering"
+      ],
+      "depth": 2,
+      "content": "Sample Note Content",
+      "status": "completed",
+      "log": [
+        "探索起点を設定: 00_Graph_Engineering",
+        "近傍サブグラフを走査: ノード数 5件, エッジ数 14件",
+        "異分野架け橋ノードを検出: 0件",
+        "知識統合インサイトを生成完了",
+        "Obsidian Canvasを出力: Emergence_00_Graph_Engineering.canvas"
+      ],
+      "gathered_nodes": [
+        "02_グラフエンジニアリング_内部メカニズムと構造",
+        "01_グラフエンジニアリング_概念と基礎",
+        "00_Graph_Engineering",
+        "03_グラフエンジニアリング_実践設計と課題対策",
+        "04_グラフエンジニアリング_Antigravity実装例"
+      ],
+      "subgraph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "title": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "path": "30_Document/Graph_Engineering/02_グラフエンジニアリング_内部メカニズムと構造.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 内部メカニズムと構造",
+                "Graph Engineering 内部メカニズム"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "PageRank",
+                "自律エージェント",
+                "01_グラフエンジニアリング_概念と基礎",
+                "MOC",
+                "00_Graph_Engineering",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "トポロジー",
+                "Reducer"
+              ],
+              "char_count": 3174,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "01_グラフエンジニアリング_概念と基礎",
+              "title": "01_グラフエンジニアリング_概念と基礎",
+              "path": "30_Document/Graph_Engineering/01_グラフエンジニアリング_概念と基礎.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 概念と基礎",
+                "Graph Engineering 概念と基礎"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "StateGraph",
+                "PageRank",
+                "MOC",
+                "00_Graph_Engineering",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "ナレッジグラフ",
+                "有向非巡回グラフ",
+                "GraphRAG"
+              ],
+              "char_count": 3194,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "00_Graph_Engineering",
+              "title": "00_Graph_Engineering",
+              "path": "30_Document/Graph_Engineering/00_Graph_Engineering.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング",
+                "Graph_Engineering"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "アーキテクチャ",
+                "コア",
+                "01_グラフエンジニアリング_概念と基礎",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "トレードオフ",
+                "ナレッジグラフ",
+                "GraphRAG",
+                "ベクトル検索",
+                "クロスオーバー",
+                "StateGraph",
+                "LangGraph",
+                "トポロジー",
+                "有向非巡回グラフ",
+                "PageRank",
+                "00_Context_Engineering",
+                "00_Loop_Engineering",
+                "00_Semantic_Engineering",
+                "00_システム思考"
+              ],
+              "char_count": 1577,
+              "pagerank": 0.17991200942952681,
+              "pagerank_normalized": 100.0,
+              "in_degree": 4,
+              "out_degree": 4,
+              "total_degree": 8,
+              "is_center": true
+            }
+          },
+          {
+            "data": {
+              "id": "03_グラフエンジニアリング_実践設計と課題対策",
+              "title": "03_グラフエンジニアリング_実践設計と課題対策",
+              "path": "30_Document/Graph_Engineering/03_グラフエンジニアリング_実践設計と課題対策.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング 実践設計と課題対策",
+                "Graph Engineering ベストプラクティス"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "自律エージェント",
+                "02_グラフエンジニアリング_内部メカニズムと構造",
+                "MOC",
+                "00_Graph_Engineering",
+                "04_グラフエンジニアリング_Antigravity実装例",
+                "StateGraph",
+                "LangGraph",
+                "Human-in-the-loop",
+                "Reducer"
+              ],
+              "char_count": 2501,
+              "pagerank": 0.13792756249878527,
+              "pagerank_normalized": 76.66,
+              "in_degree": 3,
+              "out_degree": 3,
+              "total_degree": 6,
+              "is_center": false
+            }
+          },
+          {
+            "data": {
+              "id": "04_グラフエンジニアリング_Antigravity実装例",
+              "title": "04_グラフエンジニアリング_Antigravity実装例",
+              "path": "30_Document/Graph_Engineering/04_グラフエンジニアリング_Antigravity実装例.md",
+              "domain": "Other",
+              "domain_label": "その他",
+              "color": "#94a3b8",
+              "tags": [
+                "tech-studies",
+                "tech/graph-engineering"
+              ],
+              "aliases": [
+                "グラフエンジニアリング Antigravity実装例",
+                "Graph Engineering 実装コード"
+              ],
+              "type": "知識カード",
+              "status": "",
+              "raw_links": [
+                "グラフエンジニアリング",
+                "コア",
+                "アーキテクチャ",
+                "StateGraph",
+                "03_グラフエンジニアリング_実践設計と課題対策",
+                "MOC",
+                "00_Graph_Engineering",
+                "Obsidian Canvas",
+                "Cytoscape.js",
+                "PageRank"
+              ],
+              "char_count": 3581,
+              "pagerank": 0.09679129053593256,
+              "pagerank_normalized": 53.8,
+              "in_degree": 2,
+              "out_degree": 2,
+              "total_degree": 4,
+              "is_center": false
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "sub_e1",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e2",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e3",
+              "source": "02_グラフエンジニアリング_内部メカニズムと構造",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e4",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e5",
+              "source": "01_グラフエンジニアリング_概念と基礎",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e6",
+              "source": "00_Graph_Engineering",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e7",
+              "source": "00_Graph_Engineering",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e8",
+              "source": "00_Graph_Engineering",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e9",
+              "source": "00_Graph_Engineering",
+              "target": "01_グラフエンジニアリング_概念と基礎"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e10",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "04_グラフエンジニアリング_Antigravity実装例"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e11",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e12",
+              "source": "03_グラフエンジニアリング_実践設計と課題対策",
+              "target": "02_グラフエンジニアリング_内部メカニズムと構造"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e13",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "00_Graph_Engineering"
+            }
+          },
+          {
+            "data": {
+              "id": "sub_e14",
+              "source": "04_グラフエンジニアリング_Antigravity実装例",
+              "target": "03_グラフエンジニアリング_実践設計と課題対策"
+            }
+          }
+        ]
+      },
+      "bridges": [],
+      "bridge_count": 0,
+      "insights": "【探索サマリー】\n- 起点ノート: 00_Graph_Engineering\n- 走査範囲: 関連5ノート\n- 主要架け橋概念: \n\n【創発インサイト】\nこれらの概念が交差することで、ドメイン間の知識循環が加速されます。",
+      "canvas_file": "00_System/Temporary/Emergence_00_Graph_Engineering.canvas"
+    },
+    "timestamp": "2026-08-25T22:18:57.427956"
+  }
+]

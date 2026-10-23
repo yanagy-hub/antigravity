@@ -1,0 +1,76 @@
+{
+  "stats": {
+    "totalMinutes": 35,
+    "todayMinutes": 35,
+    "lastStudyDate": "2026-09-22",
+    "streakDays": 1,
+    "modeDistribution": {
+      "daily": 15,
+      "business": 15,
+      "toeic": 5
+    },
+    "completedMissions": [
+      "5文型と基本動詞（get, take, have, make）の感覚を復習する",
+      "命令文を回避し、クッション言葉を用いた依頼表現を身につける"
+    ],
+    "savedPhrasesCount": 3,
+    "reviewedCount": 1,
+    "quizzesTaken": 3,
+    "quizzesCorrect": 3
+  },
+  "savedPhrases": [
+    {
+      "id": "phrase_init_1",
+      "en": "Could I get an iced latte with oat milk, please?",
+      "ja": "オーツミルクのアイスラテをいただけますか？",
+      "category": "日常・カフェ",
+      "mode": "daily",
+      "savedAt": "2026-09-22T11:39:52.277603"
+    },
+    {
+      "id": "phrase_init_2",
+      "en": "I would like to follow up on our discussion yesterday.",
+      "ja": "昨日の議論についてフォローアップさせていただきたく存じます。",
+      "category": "ビジネス・メール",
+      "mode": "business",
+      "savedAt": "2026-09-22T11:39:52.277605"
+    },
+    {
+      "id": "phrase_init_3",
+      "en": "All submissions are subject to managerial approval.",
+      "ja": "すべての提出物は管理職の承認を必要とします。（TOEIC頻出）",
+      "category": "TOEIC・規則",
+      "mode": "toeic",
+      "savedAt": "2026-09-22T11:39:52.277606"
+    }
+  ],
+  "reviewHistory": [
+    {
+      "id": "rev_init_001",
+      "createdAt": "2026-09-22T11:39:52.277607",
+      "mode": "business",
+      "original": "I want you to check this file tomorrow.",
+      "versions": {
+        "corrected": "I would like you to check this file tomorrow.",
+        "natural": "Could you please take a look at this file tomorrow?",
+        "business_or_formal": "I would appreciate it if you could review this document by tomorrow."
+      },
+      "corrections": [
+        {
+          "type": "Tone & Politeness",
+          "issue": "I want you to はやや命令調に聞こえる可能性があります。",
+          "fixed": "Could you please... / I would appreciate it if...",
+          "explanation": "ビジネスシーンでは、助動詞 could や仮定法表現を用いることで上品で協力的な依頼になります。"
+        }
+      ],
+      "key_vocabulary": [
+        {
+          "word": "take a look at",
+          "meaning": "〜に目を通す、確認する",
+          "example": "Could you take a quick look at this draft?"
+        }
+      ],
+      "coach_comment": "初回の英作文素晴らしいです！相手への敬意が伝わる表現をマスターしていきましょう。"
+    }
+  ]
+}
