@@ -34,7 +34,7 @@ cd 20_Workspace/bq-vector-visualizer
 ./run.sh
 ```
 
-`run.sh` スクリプトは、システム内の `uv` または `python3` を自動検出し、仮想環境の作成から依存パッケージのインストール、Streamlit サーバーの立ち上げまでを全自動で行います。
+`run.sh` スクリプトは、`uv` を用いて `.python-version` と `uv.lock` に基づく仮想環境の同期を行い、Streamlit サーバーを起動します。
 
 ブラウザで `http://localhost:8501` が開きます。
 
@@ -47,8 +47,9 @@ cd 20_Workspace/bq-vector-visualizer
 ├── app.py                     # Streamlit メインアプリケーション
 ├── config.py                  # 設定定数・デフォルト値
 ├── run.sh                     # ワンクリック起動スクリプト
-├── pyproject.toml             # uv / pip 設定ファイル
-├── requirements.txt           # 依存パッケージ一覧
+├── pyproject.toml             # uv プロジェクト・依存定義ファイル
+├── uv.lock                    # 依存パッケージロックファイル
+├── .python-version            # 固定Pythonバージョン (3.12.5)
 ├── README.md                  # 本ドキュメント
 ├── core/                      # コアロジックパッケージ
 │   ├── bq_client.py           # BigQuery接続・スキーマ取得・データ抽出
@@ -71,5 +72,6 @@ cd 20_Workspace/bq-vector-visualizer
 ## 🧪 テストの実行
 
 ```bash
-python3 -m unittest discover -s 20_Workspace/bq-vector-visualizer/tests
+cd 20_Workspace/bq-vector-visualizer
+uv run python -m unittest discover -s tests
 ```

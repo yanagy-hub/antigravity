@@ -28,7 +28,7 @@
 | | ├── `english-coach-app/` | 英語学習支援Webアプリケーション（English Coach App） |
 | | └── `bq-vector-visualizer/` | BigQueryベクトル情報可視化・探索Webアプリケーション（BQ Vector Visualizer） |
 | **`30`** | `30_Document/` | 文章管理レイヤー（プロジェクトのルール、仕様書、ナレッジ、ノート管理） |
-| | ├── `01_Rules/` | 運用ルール・コーディング規約（`01_Directory_Structure.md`, `04_Custom_Agents_Guide.md` 等） |
+| | ├── `01_Rules/` | 運用ルール・コーディング規約（`01_Directory_Structure.md`, `04_Custom_Agents_Guide.md`, `05_Python_Environment_Rules.md` 等） |
 | | ├── `GCP_AI_Agent_Environment_Guide.md` | GCPでのAI Agent環境構築・費用試算・Docsチケット駆動運用設計書 |
 | | ├── `Graph_Engineering/` | グラフエンジニアリング総合ガイド・5ステージ技術探究ノート群 |
 | | ├── `Journal/` | ジャーナルWebアプリと双方向同期されたObsidian互換Markdownノート群 |
@@ -80,3 +80,4 @@
 - **2026-09-22**: 5役2ループ構成の開発サブエージェント体制（Plan, Plan Review, Supervisor, Work, Work Review）の導入に伴い、`40_Management/` 配下に `43_Plan_Reviews/`, `44_Work_Reviews/` を整備。`70_Templates/` に `TPL_Plan_Review.md` および `TPL_Work_Review.md` を新設し、構成管理ドキュメントを最新化。
 - **2026-09-22**: 英語学習支援Webアプリケーション構築（`PLAN-20260922-01`）に伴い、`20_Workspace/english-coach-app/`、`30_Document/English_Learning/`、および同期CLI `90_System/91_Scripts/english_coach_sync.py` を定義に追加・最新化。
 - **2026-10-19**: BigQueryベクトル情報可視化・探索Webアプリケーション構築（`PLAN-20261019-01`）に伴い、`20_Workspace/bq-vector-visualizer/` を定義に追加・最新化。
+- **2026-11-14**: Python環境・依存関係運用ルール（`30_Document/01_Rules/05_Python_Environment_Rules.md`）を新規追加し、構成定義を最新化。
